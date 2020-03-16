@@ -12,7 +12,13 @@ def BinaireToAll(binaire):
     print(Tot+'\n')
     return [Dec,Hex]
 
+def DecimalToAll():
+    a="Work in Progress"
+    return a
 
+def HexaToAll():
+    a="Work in Progress"
+    return a
 
 def BinaireToDecimal(binaire):
     binaire=deepcopy(binaire)
@@ -35,6 +41,9 @@ def DecimalToHexa(binaire):
     hexa=""
     a=int(binaire)%16
     while binaire!=0:
+
+        a=int(binaire)%16
+        print(a)
         if a==10:
             hexa= hexa+ "A"
         if a==11:
@@ -47,10 +56,12 @@ def DecimalToHexa(binaire):
             hexa= hexa+ "E"
         if a==15:
             hexa= hexa+ "F"
-        else:
-            hexa= hexa+ str(a)
+        if a in range(0,10):
+            hexa=hexa+str(a)
+
         binaire=int(binaire)/16
-        a=int(binaire)%16
+
+
     hexa= hexa.replace('0','')
     hexa= hexa[::-1]
     return hexa
